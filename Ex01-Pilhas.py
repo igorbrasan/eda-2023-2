@@ -1,11 +1,8 @@
 
-#Para implementar duas pilhas em um único vetor e fornecer algoritmos para inclusão (empilhar) e exclusão (desempilhar) em ambas as pilhas, 
-#você pode usar um vetor e dois índices para rastrear a parte superior de cada pilha. 
-#Um índice será para a pilha 1 e o outro para a pilha 2. Aqui estão os algoritmos em Python:
-
-
 #A complexidade é O(1), pois as operações de empilhar e desempilhar não dependem do tamanho do vetor.
-class DuasPilhasEmUmVetor:
+
+
+class Pilha_Dupla:
     def __init__(self, tamanho):
         self.tamanho = tamanho
         self.vetor = [None] * tamanho
@@ -45,15 +42,23 @@ class DuasPilhasEmUmVetor:
                 print("Pilha 2 está vazia.")
         else:
             print("Pilha inválida.")
-            return None
 
-# Exemplo de uso
-duas_pilhas = DuasPilhasEmUmVetor(10)
+pilha_dupla = Pilha_Dupla(10)
+pilha_dupla.empilhar(1, 5)
+pilha_dupla.empilhar(2, 10)
+pilha_dupla.empilhar(1, 15)
+pilha_dupla.empilhar(2, 20)
 
-duas_pilhas.empilhar(1, 5)
-duas_pilhas.empilhar(2, 10)
-duas_pilhas.empilhar(1, 15)
-duas_pilhas.empilhar(2, 20)
+print(pilha_dupla.desempilhar(1)) 
+print(pilha_dupla.desempilhar(2))  
 
-print(duas_pilhas.desempilhar(1))  # Saída: 15
-print(duas_pilhas.desempilhar(2))  # Saída: 20
+
+p2 = Pilha_Dupla(6)
+p2.empilhar(1,3)
+p2.empilhar(2,2)
+p2.empilhar(2,3)
+p2.empilhar(2,5)
+p2.empilhar(2,6)
+p2.empilhar(2,9)
+print(p2.empilhar(2,0))
+
